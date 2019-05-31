@@ -10,8 +10,16 @@
     "express": "^4.17.1",
     "helmet": "^3.18.0",
     "knex": "^0.17.0",
-    "knex-cleaner": "^1.1.4",
-    "nodemon": "^1.19.1",
+    "morgan": "^1.9.1",
     "sqlite3": "^4.0.8"
+  },
+  "devDependencies": {
+    "knex-cleaner": "^1.1.4",
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "prod": "node index.js",
+    "dev": "nodemon index.js"
   }
 }
