@@ -16,5 +16,5 @@ exports.seed = async function (knex) {
     { unit: 'kilograms', abbreviation: 'kg' },
     { unit: 'Celcius', abbreviation: '°C' },
     { unit: 'Fahrenheit', abbreviation: '°F' },
-  ]);
-};
+  ])
+}
