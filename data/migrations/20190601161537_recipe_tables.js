@@ -23,6 +23,12 @@ exports.up = async function(knex) {
       .references('id')
       .inTable('Ingredients')
       .notNullable()
+    tbl.float('quantity').notNullable()
+    tbl
+      .integer('unit_id')
+      .references('id')
+      .inTable('UnitsOfMeasure')
+      .notNullable()
   })
 
   await knex.schema.createTable('RecipeInstructions', tbl => {
