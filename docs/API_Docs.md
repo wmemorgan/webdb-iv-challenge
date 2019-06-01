@@ -1,7 +1,7 @@
 ### API Documentation
 
 #### Endpoint
-https://demo--teambuilderapp-api.netlify.com/.netlify/functions/server/api
+https://wme-recipebook-api.herokuapp.com/api/
 
 #### Dishes Routes
 
