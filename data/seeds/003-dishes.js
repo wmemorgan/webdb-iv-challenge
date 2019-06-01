@@ -2,9 +2,9 @@
 exports.seed = async function(knex) {
   // Inserts seed entries
   await knex('Dishes').insert([
-    { name: 'Pasta' },
-    { name: 'Chili' },
-    { name: 'Pancit' },
-    { name: 'Ham' }
+    { id: 1, name: 'Pasta' },
+    { id: 2, name: 'Chili' },
+    { id: 3, name: 'Pancit' },
+    { id: 4, name: 'Ham' }
   ])
 }
