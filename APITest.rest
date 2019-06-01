@@ -1,22 +1,33 @@
 ### GET (Basic)
 http://localhost:5000
 
-### GET (ALL)
+### GET Dishes (ALL)
 http://localhost:5000/api/dishes
 
-### GET (by ID)
-http://localhost:5000/api/dishes/10
+### GET Recipes (ALL)
+http://localhost:5000/api/recipes
 
-### GET (recipes by dish)
-http://localhost:5000/api/dishes/3/recipes
+### GET dishes (by ID)
+http://localhost:5000/api/dishes/3
 
-### POST
+### GET recipes (ID)
+http://localhost:5000/api/recipes/
+
+### POST (Dishes)
 POST http://localhost:5000/api/dishes HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Test User",
-  "cohort_id": 1 
+  "name": "Tacos"
+}
+
+### POST (Recipes)
+POST http://localhost:5000/api/recipes HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Cafe Morgan Fish Tacos",
+  "dish_id": 5
 }
 
 ### PUT
@@ -24,10 +35,9 @@ PUT http://localhost:5000/api/dishes/10 HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Sam",
-  "cohort_id": 4 
+
 }
 
 ### DELETE
-DELETE http://localhost:5000/api/dishes/11
+DELETE http://localhost:5000/api/dishes/7
 
