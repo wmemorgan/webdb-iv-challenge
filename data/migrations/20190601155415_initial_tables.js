@@ -19,9 +19,6 @@ exports.up = async function(knex) {
       .integer('unit_id')
       .references('id')
       .inTable('UnitsOfMeasure')
-      .onDelete('CASCADE')
-      .onUpdate('CASCADE')
-      .notNullable()
   })
 };
 
