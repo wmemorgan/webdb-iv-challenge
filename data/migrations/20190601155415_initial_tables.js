@@ -7,7 +7,8 @@ exports.up = async function(knex) {
 
   await knex.schema.createTable('UnitsOfMeasure', tbl => {
     tbl.increments('id')
-    tbl.string('unit')
+    tbl.string('unit').unique().notNullable()
+    tbl.string('abbreviation').unique()
   }) 
 
   await knex.schema.createTable('Ingredients', tbl => {
