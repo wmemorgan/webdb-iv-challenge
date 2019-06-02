@@ -53,7 +53,7 @@ router.put('/:id', idBodyCheck, async (req, res) => {
 // ==== DELETE ==== //
 router.delete('/:id', validateDataId, async (req, res) => {
   try {
-    let data = await db.remove(req.data.id, 'Recipes')
+    let data = await remove(req.data.id, 'Recipes')
     res.json(data)
   }
   catch (err) {
