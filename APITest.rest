@@ -8,11 +8,23 @@ http://localhost:5000/api/dishes
 ### GET Recipes (ALL)
 http://localhost:5000/api/recipes
 
-### GET dishes (by ID)
+### GET Ingredients (ALL)
+http://localhost:5000/api/ingredients
+
+### GET Units (ALL)
+http://localhost:5000/api/units
+
+### GET Dishes (by ID)
 http://localhost:5000/api/dishes/3
 
-### GET recipes (ID)
+### GET Recipes (ID)
 http://localhost:5000/api/recipes/
+
+### GET Ingredients (ID)
+http://localhost:5000/api/ingredients/2
+
+### GET Units (ID)
+http://localhost:5000/api/units/12
 
 ### POST (Dishes)
 POST http://localhost:5000/api/dishes HTTP/1.1
@@ -39,6 +51,15 @@ content-type: application/json
 
 }
 
-### DELETE
+### DELETE Dishes
 DELETE http://localhost:5000/api/dishes/7
+
+### DELETE Recipes
+DELETE http://localhost:5000/api/recipes/7
+
+### DELETE Ingredients
+DELETE http://localhost:5000/api/ingredients/7
+
+### DELETE Units
+DELETE http://localhost:5000/api/units/7
 
