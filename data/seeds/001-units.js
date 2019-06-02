@@ -16,5 +16,10 @@ exports.seed = async function (knex) {
     { unit: 'kilograms', abbreviation: 'kg' },
     { unit: 'Celcius', abbreviation: '°C' },
     { unit: 'Fahrenheit', abbreviation: '°F' },
+    { unit: 'small', abbreviation: 's' },
+    { unit: 'medium', abbreviation: 'm' },
+    { unit: 'large', abbreviation: 'l' },
+    { unit: 'x-large', abbreviation: 'xl' },
+    { unit: 'cloves', abbreviation: 'cloves' }
   ])
 }
