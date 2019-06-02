@@ -5,6 +5,8 @@ const logger = require('morgan')
 // Import resource routes
 const dishRoutes = require('../routes/dishRoutes')
 const recipeRoutes = require('../routes/recipeRoutes')
+const ingredientRoutes = require('../routes/ingredientRoutes')
+const unitRoutes = require('../routes/unitRoutes')
 
 // Instantiate server
 const server = express()
@@ -17,6 +19,8 @@ server.use(logger('dev'))
 // Activate routes
 server.use('/api/dishes', dishRoutes)
 server.use('/api/recipes', recipeRoutes)
+server.use('/api/ingredients', ingredientRoutes)
+server.use('/api/units', unitRoutes)
 server.use('/', (req, res) => {
   res.send(`<h1>Welcome to the Recipe Book API</h1>`)
 })
