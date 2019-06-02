@@ -18,7 +18,7 @@ http://localhost:5000/api/units
 http://localhost:5000/api/dishes/3
 
 ### GET Recipes (ID)
-http://localhost:5000/api/recipes/
+http://localhost:5000/api/recipes/4
 
 ### GET Ingredients (ID)
 http://localhost:5000/api/ingredients/2
