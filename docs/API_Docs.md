@@ -54,10 +54,7 @@ https://wme-recipebook-api.herokuapp.com/api/
 | `getDish(id)` | Return the **dish** with the provided `id` and include a list of the related recipes. |
 | `addDish(dish)` | Add the **dish** to the database and return the `id` of the new **dish**. |
 | `getRecipes()` | Return a list of all recipes in the database including the **dish** they belong to. |
-| `getRecipe(id)` | Return the recipe with the provided `id`. The recipe should include:
-  - name of the dish.
-  - name of the recipe.
-  - the list of ingredients with the quantity. |
+| `getRecipe(id)` | Return the recipe with the provided `id`. The recipe should include: 1) name of the dish, 2) name of the recipe, 3) the list of ingredients with the quantity. |
 | `addRecipe(recipe)` | Add a **recipe** to the database and return the `id` of the new **recipe**. |
 | `getShoppingList(recipeId)` | Returns a list of all the recipe's ingredients including the quantity of each. |
 
