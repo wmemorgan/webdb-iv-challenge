@@ -10,8 +10,8 @@ https://wme-recipebook-api.herokuapp.com/api/
 | Method | Endpoint                        | Description                                        |
 |--------|---------------------------------|----------------------------------------------------|
 | GET    | `/dishes`         | Returns all dishes       |
-| GET    | `/dishes/:id`         | Returns the **dish** with the provided `id` and include a list of the related recipes.       |
-| POST    | `/dishes`         | Add the **dish** to the database and return the `id` of the new **dish**.       |
+| GET    | `/dishes/:id`         | Returns the dish with the provided `id` and include a list of the related recipes.       |
+| POST    | `/dishes`         | Add the dish to the database and return the `id` of the new dish.       |
 | PUT    | `/dishes/:id`         | Modify an existing dish.                   |
 | DELETE | `/dishes/:id`         | Delete a dish.                            |
 
@@ -51,11 +51,11 @@ https://wme-recipebook-api.herokuapp.com/api/
 | Method | Description |
 |--------|-------------|
 | `getDishes()` | Return a list of all dishes in the database. |
-| `getDish(id)` | Return the **dish** with the provided `id` and include a list of the related recipes. |
-| `addDish(dish)` | Add the **dish** to the database and return the `id` of the new **dish**. |
-| `getRecipes()` | Return a list of all recipes in the database including the **dish** they belong to. |
+| `getDish(id)` | Return the dish with the provided `id` and include a list of the related recipes. |
+| `addDish(dish)` | Add the dish to the database and return the `id` of the new dish. |
+| `getRecipes()` | Return a list of all recipes in the database including the dish they belong to. |
 | `getRecipe(id)` | Return the recipe with the provided `id`. The recipe should include: 1) name of the dish, 2) name of the recipe, 3) the list of ingredients with the quantity. |
-| `addRecipe(recipe)` | Add a **recipe** to the database and return the `id` of the new **recipe**. |
+| `addRecipe(recipe)` | Add a recipe to the database and return the `id` of the new recipe. |
 | `getShoppingList(recipeId)` | Returns a list of all the recipe's ingredients including the quantity of each. |
 
 #### Global Models
