@@ -36,6 +36,20 @@ function getRecipes() {
     .select({id: 'Recipes.id', name: 'Recipes.name', dish: 'Dishes.name'})
 }
 
+async function getRecipe(id) {
+  let recipeIngredients = await getShoppingList(id)  
+  
+  let recipe = await db('Recipes')
+    .select({dish: 'Dishes.name', recipe: 'Recipes.name'})
+    .innerJoin('Dishes', 'Dishes.id', 'Recipes.dish_id')
+    .where({ 'Recipes.id': id })
+    .first()
+  return {
+    ...recipe,
+    ingredients: recipeIngredients
+  }
+}
+
 function addRecipe(recipe) {
   return db('Recipes')
     .insert(recipe, 'id')
@@ -45,6 +59,16 @@ function addRecipe(recipe) {
         .first()
         .then(record => record)
     })
+}
+
+function getShoppingList(id) {
+  return db('RecipeIngredients')
+    .select('Ingredients.name',
+      'RecipeIngredients.quantity',
+      'UnitsOfMeasure.unit')
+    .innerJoin('Ingredients', 'Ingredients.id', 'RecipeIngredients.ingredient_id')
+    .innerJoin('UnitsOfMeasure', 'UnitsOfMeasure.id', 'RecipeIngredients.unit_id')
+    .where({ recipe_id: id })
 }
 
 //==== Global Database Methods ====//
@@ -111,6 +135,7 @@ module.exports = {
   getDish,
   addDish,
   getRecipes,
+  getRecipe,
   addRecipe,
   find,
   findById,

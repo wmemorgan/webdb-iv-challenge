@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
 // Import data models
-const { getRecipes, addRecipe, remove, findById } = require('../data/models')
+const db = require('../data/models')
 
 // Load middleware
 const idBodyCheck = [requiredData, validateDataId]
@@ -9,7 +9,7 @@ const idBodyCheck = [requiredData, validateDataId]
 // ==== GET ==== //
 router.get('/', async (req, res) => {
   try {
-    let data = await getRecipes()
+    let data = await db.getRecipes()
     res.send(data)
   }
   catch (err) {
@@ -19,7 +19,8 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', validateDataId, async (req, res) => {
   try {
-    let data = await findById(req.data.id, 'Recipes')
+    //let data = await db.findById(req.data.id, 'Recipes')
+    let data = await db.getRecipe(req.data.id)
     res.send(data)
   }
   catch (err) {
@@ -30,7 +31,7 @@ router.get('/:id', validateDataId, async (req, res) => {
 // ==== POST ==== //
 router.post('/', requiredData, async (req, res) => {
   try {
-    let data = await addRecipe(req.body)
+    let data = await db.addRecipe(req.body)
     console.log(`add recipe: `, data)
     res.send(data)
   }
@@ -53,7 +54,7 @@ router.put('/:id', idBodyCheck, async (req, res) => {
 // ==== DELETE ==== //
 router.delete('/:id', validateDataId, async (req, res) => {
   try {
-    let data = await remove(req.data.id, 'Recipes')
+    let data = await db.remove(req.data.id, 'Recipes')
     res.json(data)
   }
   catch (err) {
@@ -64,7 +65,7 @@ router.delete('/:id', validateDataId, async (req, res) => {
 // Custom middleware
 async function validateDataId(req, res, next) {
   try {
-    let data = await findById(req.params.id, 'Recipes')
+    let data = await db.findById(req.params.id, 'Recipes')
     if (data) {
       req.data = data
       next()
