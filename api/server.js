@@ -22,7 +22,9 @@ server.use('/api/recipes', recipeRoutes)
 server.use('/api/ingredients', ingredientRoutes)
 server.use('/api/units', unitRoutes)
 server.use('/', (req, res) => {
-  res.send(`<h1>Welcome to the Recipe Book API</h1>`)
+  res.send(`<h1>Welcome to the Recipe Book API</h1>
+  <p><i>It's a cook book!</i></p>
+  `)
 })
 
 module.exports = server
